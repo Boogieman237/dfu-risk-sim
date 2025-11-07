@@ -1,31 +1,30 @@
-# DFU Risk Simulator  
-**Vladimir Burzanović, MD**  
-General Surgeon + Angiology Subspecialty → HealthTech  
+# DFU Risk Simulator
+**Vladimir Burzanović, MD**
+General Surgeon + Angiology Subspecialty → HealthTech
 
-**Phone-based DFU self-check**: Doppler waveform + foot photo temp + **Orpyx-style pressure/temp proxy** → **% risk + urgent alarm**  
+**Phone-based DFU self-check**: Doppler + Photo Temp + **Orpyx-style Pressure** → **% risk + urgent alarm**
 
-Live demo: [Run in Browser (Binder)](https://mybinder.org/v2/gh/Boogieman237/dfu-risk-sim/main?filepath=dfu_risk_score.ipynb)  
-
----
-
-## Features  
-- **Doppler**: triphasic / biphasic / monophasic  
-- **Temp diff** (°C) from foot photo (IR proxy)  
-- **Pressure** (kPa) — inspired by **Orpyx Sensory Insoles**  
-- **Ulcer sign** (yes/no)  
-→ **Composite risk % + 3-tier alert**  
+**Live Demo**: [Run in Browser (Binder)](https://mybinder.org/v2/gh/Boogieman237/dfu-risk-sim/main?filepath=dfu_risk_score.ipynb)
 
 ---
 
-## Use Case  
-KSA diabetic foot unit (Aseer Central Hospital):  
-> *Monophasic + 2.5°C hotspot + 220 kPa + ulcer sign → **100% risk → URGENT: See MD NOW***  
+## Features
+- Doppler waveform (triphasic / biphasic / monophasic)
+- Temp diff (°C) from foot photo
+- Pressure (kPa) — **Orpyx Sensory Insole proxy**
+- Ulcer sign (yes/no)
+→ **100-point risk % + 3-tier alert**
 
 ---
 
-## Next  
-- Integrate real Orpyx insole data (pilot pending)  
-- Add photo AI (ulcer detection via OpenCV)  
-- Export CSV for teleradiology  
+## Use Case (Aseer Central Hospital)
+> *Monophasic + 2.5°C + 220 kPa + ulcer → **100% → URGENT: See MD NOW***
 
-[Contact for pilot](mailto:info@orpyx.com) | [LinkedIn](https://linkedin.com/in/vladimir-burzanović-52a8b927)
+---
+
+## Next
+- Real Orpyx insole API integration (pilot pending)
+- OpenCV ulcer detection from photo
+- CSV export for teleradiology
+
+[Email Orpyx](mailto:info@orpyx.com) | [LinkedIn](https:linkedin.com/in/vladimir-burzanović-52a8b927//)
