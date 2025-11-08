@@ -22,6 +22,9 @@ General Surgeon + Angiology Subspecialty → HealthTech
 
 ---
 
+## Doppler Waveform Classifier (Phone Audio → Auto-Risk)
+→ [Run in Binder](https://mybinder.org/v2/gh/Boogieman237/dfu-risk-sim/main?filepath=doppler_classifier.ipynb)  
+→ Triphasic / Biphasic / Monophasic → feeds DFU risk score
 ## Next
 - Real Orpyx insole API integration (pilot pending)
 - OpenCV ulcer detection from photo
