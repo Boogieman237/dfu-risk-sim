@@ -1,0 +1,42 @@
+def classify_doppler(audio_signal, fs=8000):
+    """
+    Input: audio_signal (numpy array), fs = sample rate
+    Output: 'triphasic', 'biphasic', or 'monophasic'
+    """
+    import numpy as np
+    from scipy.signal import find_peaks
+
+    # Step 1: Envelope detection (smooth the signal)
+    envelope = np.abs(audio_signal)
+    envelope = np.convolve(envelope, np.ones(500)/500, mode='same')  # moving avg
+
+    # Step 2: Find systolic peaks
+    peaks, _ = find_peaks(envelope, height=np.mean(envelope)*2, distance=fs*0.5)
+
+    if len(peaks) < 2:
+        return "monophasic"  # too damped
+
+    # Step 3: Analyze reverse flow (diastolic dip)
+    reverse_flow = []
+    for i in range(len(peaks)-1):
+        segment = envelope[peaks[i]:peaks[i+1]]
+        dip = np.min(segment)
+        peak_height = envelope[peaks[i]]
+        if dip < 0.3 * peak_height:  # deep reverse
+            reverse_flow.append(True)
+        else:
+            reverse_flow.append(False)
+
+    # Step 4: Classify
+    if len(reverse_flow) >= 2 and all(reverse_flow):
+        return "triphasic"
+    elif any(reverse_flow):
+        return "biphasic"
+    else:
+        return "monophasic"
+
+# === TEST (mock audio) ===
+import numpy as np
+t = np.linspace(0, 5, 5*8000)
+triphasic = np.sin(2*np.pi*1.5*t) * np.exp(-t*0.5) + 0.3*np.sin(2*np.pi*3*t)
+print(classify_doppler(triphasic))  # → triphasic
