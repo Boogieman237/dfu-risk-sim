@@ -1,12 +1,11 @@
 # Real Clinical Doppler Audio (Nov 2025)
 
-- **2 real PAD cases** (monophasic)
-- Recorded live during 24h shift
+- **2 real PAD cases** (live recorded during 24h shift)
 - Arteries: **poplitea** + **tibialis posterior**
 
 | File | Artery | Waveform | Notes |
 |------|--------|----------|-------|
-| `poplitea_monophasic.wav` | Poplitea | Monophasic | Critical ischemia |
-| `tibialis_monophasic.wav` | Posterior Tibial | Monophasic | High amputation risk |
+| `poplitea_biphasic.wav` | Poplitea | Biphasic | Early PAD – reduced reverse flow |
+| `tibialis_posterior_monophasic.wav` | Posterior Tibial | Monophasic | Critical ischemia – high amputation risk |
 
 → Feeding AI classifier → DFU risk score
